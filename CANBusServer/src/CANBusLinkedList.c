@@ -2,12 +2,13 @@
 #include "cfg/CANBusServerCfg.h"
 #include "CANBusServerTypes.h"
 
-void CanBusServer_LL_init( CANMsgsSt_LinkedList_t *list ){
+CANMsgsSt_LinkedList_t* CanBusServer_LL_init( CANMsgsSt_LinkedList_t *list ){
     if( NULL != list ){
         list->elements = 0;
         list->first = NULL;
         list->last = NULL;
     }
+    return list;
 }
 
 uint8_t CanBusServer_LL_append( CANMsgsSt_LinkedList_t *list, CANMsgsStNode_t *node ){

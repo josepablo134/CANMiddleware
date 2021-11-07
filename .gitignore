@@ -1,3 +1,8 @@
 **.o
 **.exec
 .vscode
+**/__pycache__/*
+unit_test/CANBusServer/build/*
+unit_test/CANBusServer/results/*
+unit_test/CANBusServer/profile.*
+unit_test/CANBusServer/vendor/ceedling/docs/*
