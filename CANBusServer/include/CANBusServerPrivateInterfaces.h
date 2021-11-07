@@ -5,7 +5,7 @@
     /**
      * Initialice list structure
     */
-    extern void CanBusServer_LL_init( CANMsgsSt_LinkedList_t * list );
+    extern CANMsgsSt_LinkedList_t* CanBusServer_LL_init( CANMsgsSt_LinkedList_t * list );
     /**
      * Append a node to the end of the list
      * @return Number of elements in the list

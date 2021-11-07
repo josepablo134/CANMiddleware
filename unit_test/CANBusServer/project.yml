@@ -14,7 +14,7 @@
 :environment:
 
 :extension:
-  :executable: .out
+  :executable: .exec
 
 :paths:
   :test:
@@ -54,25 +54,17 @@
     int8:     INT8
     bool:     UINT8
 
-# Add -gcov to the plugins list to make sure of the gcov plugin
-# You will need to have gcov and gcovr both installed to make it work.
-# For more information on these options, see docs in plugins/gcov
 :gcov:
+  :utilities:
+    - gcovr
+    - ReportGenerator
   :reports:
     - HtmlDetailed
   :gcovr:
     :html_medium_threshold: 75
     :html_high_threshold: 90
+    :report_include: "../../CANBusServer/src/*"
 
-#:tools:
-# Ceedling defaults to using gcc for compiling, linking, etc.
-# As [:tools] is blank, gcc will be used (so long as it's in your system path)
-# See documentation to configure a given toolchain for use
-
-# LIBRARIES
-# These libraries are automatically injected into the build process. Those specified as
-# common will be used in all types of builds. Otherwise, libraries can be injected in just
-# tests or releases. These options are MERGED with the options in supplemental yaml files.
 :libraries:
   :placement: :end
   :flag: "-l${1}"
@@ -88,4 +80,5 @@
     - stdout_pretty_tests_report
     - module_generator
     - raw_output_report
+    - gcov
 ...
