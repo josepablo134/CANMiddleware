@@ -34,7 +34,15 @@
         uint8_t max_dlc;
     }CANServiceConfigFlags_t;
 
-    typedef uint8_t CANServiceStatusFlags_t;
+    typedef union CANServiceStatusFlags{
+        struct{
+            unsigned sent : 1;
+            unsigned received : 1;
+            unsigned overwritten : 1;
+            unsigned pending : 1;
+        } flags;
+        uint8_t __raw;
+    }CANServiceStatusFlags_t;
 
     typedef struct CANMsgSettings{
         CANServiceConfigFlags_t serviceCfg;

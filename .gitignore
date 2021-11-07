@@ -2,6 +2,7 @@
 **.exec
 .vscode
 **/__pycache__/*
+doc/*
 unit_test/CANBusServer/build/*
 unit_test/CANBusServer/results/*
 unit_test/CANBusServer/profile.*
